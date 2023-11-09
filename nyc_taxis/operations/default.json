@@ -1307,6 +1307,51 @@
       "body": { "pragma": { "data_partitioning": "doc" } }
     },
     {
+      "name": "esql_enrich_control_lx",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id"
+    },
+    {
+      "name": "esql_enrich_1_lx",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name"
+    },
+    {
+      "name": "esql_enrich_2_lx",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | ENRICH nyc_payment_types ON payment_type WITH payment_type_name=name"
+    },
+    {
+      "name": "esql_enrich_control_l500",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | LIMIT 500"
+    },
+    {
+      "name": "esql_enrich_1_l500",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | LIMIT 500"
+    },
+    {
+      "name": "esql_enrich_2_l500",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | ENRICH nyc_payment_types ON payment_type WITH payment_type_name=name | LIMIT 500"
+    },
+    {
+      "name": "esql_enrich_control_l10k",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | LIMIT 10000"
+    },
+    {
+      "name": "esql_enrich_1_l10k",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | LIMIT 10000"
+    },
+    {
+      "name": "esql_enrich_2_l10k",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | ENRICH nyc_payment_types ON payment_type WITH payment_type_name=name | LIMIT 10000"
+    },
+    {
       "name": "esql_enrich_control",
       "operation-type": "esql",
       "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | LIMIT 100000"
@@ -1345,6 +1390,36 @@
       "name": "esql_enrich_payments_fares",
       "operation-type": "esql",
       "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id | ENRICH nyc_payment_types_fares ON payment_type WITH payment_type_name=name, payment_type_fare=fare | LIMIT 100000"
+    },
+    {
+      "name": "esql_stats_enrich_control_lx",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id, fare_amount | STATS count=count(*), avg_fare=avg(fare_amount) BY rate_code_id"
+    },
+    {
+      "name": "esql_stats_enrich_1_lx",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id, fare_amount | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | STATS count=count(*), avg_fare=avg(fare_amount) BY rate_code_name"
+    },
+    {
+      "name": "esql_stats_enrich_2_lx",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id, fare_amount |ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | ENRICH nyc_payment_types ON payment_type WITH payment_type_name=name | STATS count=count(*), avg_fare=avg(fare_amount) BY rate_code_name, payment_type_name"
+    },
+    {
+      "name": "esql_stats_enrich_control_l10k",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id, fare_amount | LIMIT 10000 | STATS count=count(*), avg_fare=avg(fare_amount) BY rate_code_id"
+    },
+    {
+      "name": "esql_stats_enrich_1_l10k",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id, fare_amount | LIMIT 10000 | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | STATS count=count(*), avg_fare=avg(fare_amount) BY rate_code_name"
+    },
+    {
+      "name": "esql_stats_enrich_2_l10k",
+      "operation-type": "esql",
+      "query": "FROM nyc_taxis | KEEP rate_code_id, payment_type, trip_type, vendor_id, fare_amount | LIMIT 10000 | ENRICH nyc_rate_codes ON rate_code_id WITH rate_code_name=name | ENRICH nyc_payment_types ON payment_type WITH payment_type_name=name | STATS count=count(*), avg_fare=avg(fare_amount) BY rate_code_name, payment_type_name"
     },
     {
       "name": "esql_stats_enrich_control",

@@ -1102,25 +1102,88 @@
           "iterations": 50
         },
         {
-          "operation": "esql_enrich_control",
-          "tags": ["enrich"],
+          "operation": "esql_enrich_control_lx",
+          "tags": ["enrich", "lx"],
           "clients": 1,
-          "warmup-iterations": 10,
-          "iterations": 50
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_1_lx",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_2_lx",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_control_l500",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_1_l500",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_2_l500",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_control_l10k",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_1_l10k",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_2_l10k",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_enrich_control",
+          "tags": ["enrich", "lx"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
         },
         {
           "operation": "esql_enrich_1",
-          "tags": ["enrich"],
+          "tags": ["enrich", "lx"],
           "clients": 1,
-          "warmup-iterations": 10,
-          "iterations": 50
+          "warmup-iterations": 3,
+          "iterations": 10
         },
         {
           "operation": "esql_enrich_2",
-          "tags": ["enrich"],
+          "tags": ["enrich", "lx"],
           "clients": 1,
-          "warmup-iterations": 10,
-          "iterations": 50
+          "warmup-iterations": 3,
+          "iterations": 10
         },
         {
           "operation": "esql_enrich_3",
@@ -1158,25 +1221,67 @@
           "iterations": 50
         },
         {
-          "operation": "esql_stats_enrich_control",
-          "tags": ["enrich","stats"],
+          "operation": "esql_stats_enrich_control_lx",
+          "tags": ["enrich","stats","lxs"],
           "clients": 1,
-          "warmup-iterations": 10,
-          "iterations": 50
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_stats_enrich_1_lx",
+          "tags": ["enrich","stats","lxs"],
+          "clients": 1,
+          "warmup-iterations": 1,
+          "iterations": 3
+        },
+        {
+          "operation": "esql_stats_enrich_2_lx",
+          "tags": ["enrich","stats","lxs"],
+          "clients": 1,
+          "warmup-iterations": 1,
+          "iterations": 3
+        },
+        {
+          "operation": "esql_stats_enrich_control_l10k",
+          "tags": ["enrich","stats","lxs"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_stats_enrich_1_l10k",
+          "tags": ["enrich","stats","lxs"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_stats_enrich_2_l10k",
+          "tags": ["enrich","stats","lxs"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
+        },
+        {
+          "operation": "esql_stats_enrich_control",
+          "tags": ["enrich","stats","lxs"],
+          "clients": 1,
+          "warmup-iterations": 3,
+          "iterations": 10
         },
         {
           "operation": "esql_stats_enrich_1",
-          "tags": ["enrich","stats"],
+          "tags": ["enrich","stats","lxs"],
           "clients": 1,
-          "warmup-iterations": 10,
-          "iterations": 50
+          "warmup-iterations": 3,
+          "iterations": 10
         },
         {
           "operation": "esql_stats_enrich_2",
-          "tags": ["enrich","stats"],
+          "tags": ["enrich","stats","lxs"],
           "clients": 1,
-          "warmup-iterations": 10,
-          "iterations": 50
+          "warmup-iterations": 3,
+          "iterations": 10
         },
         {
           "operation": "esql_stats_enrich_3",
