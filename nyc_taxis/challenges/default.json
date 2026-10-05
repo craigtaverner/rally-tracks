@@ -943,15 +943,14 @@
           "operation": "avg_passenger_count_aggregation",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
         {
           "operation": "avg_passenger_count_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50,
-          "tags": ["inlinestats", "bisect"]
+          "tags": ["inlinestats"]
         },
       {# non-serverless-inlinestats-marker-start #}{%- if build_flavor != "serverless" -%}
         {
@@ -959,21 +958,21 @@
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 20,
-          "tags": ["inlinestats", "bisect"]
+          "tags": ["inlinestats"]
         },
         {
           "operation": "two_chained_inlinestats_esql",
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 20,
-          "tags": ["inlinestats", "bisect"]
+          "tags": ["inlinestats"]
         },
         {
           "operation": "three_chained_inlinestats_esql",
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 20,
-          "tags": ["inlinestats", "bisect"]
+          "tags": ["inlinestats"]
         },
       {%- endif -%}{# non-serverless-inlinestats-marker-end #}
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
@@ -982,22 +981,21 @@
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50,
-          "tags": ["inlinestats", "bisect"]
+          "tags": ["inlinestats"]
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "avg_passenger_count_filtered_aggregation",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
         {
           "operation": "avg_passenger_count_filtered_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50,
-          "tags": ["inlinestats", "bisect"]
+          "tags": ["inlinestats"]
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
@@ -1005,152 +1003,133 @@
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50,
-          "tags": ["inlinestats", "bisect"]
+          "tags": ["inlinestats"]
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "avg_tip_percent_aggregation",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 10,
-          "tags": ["bisect"]
+          "iterations": 10
         },
         {
           "operation": "avg_tip_percent_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
           "operation": "avg_tip_percent_esql_doc_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "avg_amount_group_by_integer_aggregation",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
         {
           "operation": "avg_amount_group_by_integer_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
           "operation": "avg_amount_group_by_integer_esql_doc_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "avg_amount_group_by_keyword_aggregation",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
         {
           "operation": "avg_amount_group_by_keyword_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
           "operation": "avg_amount_group_by_keyword_esql_doc_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "count_group_by_keyword_aggregation",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
         {
           "operation": "count_group_by_keyword_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
           "operation": "count_group_by_keyword_esql_doc_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "multi_terms-keyword",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
         {
           "operation": "composite_terms-keyword",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
         {
           "operation": "multi_terms-keyword_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
           "operation": "multi_terms-keyword_esql_doc_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "sort_by_ts_query",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
         {
           "operation": "sort_by_ts_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
           "operation": "sort_by_ts_esql_doc_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
@@ -1158,14 +1137,14 @@
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 25,
-          "tags": ["limitby", "bisect"]
+          "tags": ["limitby"]
         },
         {
           "operation": "topnby_by_payment_type_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 25,
-          "tags": ["limitby", "bisect"]
+          "tags": ["limitby"]
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
@@ -1173,7 +1152,7 @@
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 25,
-          "tags": ["limitby", "bisect"]
+          "tags": ["limitby"]
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
@@ -1181,7 +1160,7 @@
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 25,
-          "tags": ["limitby", "bisect"]
+          "tags": ["limitby"]
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
@@ -1189,36 +1168,32 @@
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 25,
-          "tags": ["limitby", "bisect"]
+          "tags": ["limitby"]
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "date_histogram_calendar_interval",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
         {
           "operation": "date_histogram_calendar_interval_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["bisect"]
+          "iterations": 50
         },
         {
           "operation": "date_histogram_calendar_interval_monthly_9months_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
         {
           "operation": "date_histogram_calendar_interval_monthly_12months_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
@@ -1490,7 +1465,7 @@
           "clients": 1,
           "warmup-iterations": 500,
           "iterations": 500,
-          "tags": ["inlinestats", "investigate", "bisect"]
+          "tags": ["inlinestats","investigate"]
         },
         {
           "operation": "stats_then_inlinestats_count_esql",
