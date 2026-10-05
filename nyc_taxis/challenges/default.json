@@ -1463,16 +1463,16 @@
         {
           "operation": "inlinestats_then_stats_count_esql",
           "clients": 1,
-          "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["inlinestats"]
+          "warmup-iterations": 500,
+          "iterations": 500,
+          "tags": ["inlinestats","investigate"]
         },
         {
           "operation": "stats_then_inlinestats_count_esql",
           "clients": 1,
-          "warmup-iterations": 10,
-          "iterations": 50,
-          "tags": ["inlinestats"]
+          "warmup-iterations": 500,
+          "iterations": 500,
+          "tags": ["inlinestats","investigate"]
         },
         {
           "operation": "inlinestats_then_stats_sum_esql",
