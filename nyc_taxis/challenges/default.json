@@ -943,14 +943,15 @@
           "operation": "avg_passenger_count_aggregation",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50
+          "iterations": 50,
+          "tags": ["bisect"]
         },
         {
           "operation": "avg_passenger_count_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50,
-          "tags": ["inlinestats"]
+          "tags": ["inlinestats", "bisect"]
         },
       {# non-serverless-inlinestats-marker-start #}{%- if build_flavor != "serverless" -%}
         {
@@ -958,21 +959,21 @@
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 20,
-          "tags": ["inlinestats"]
+          "tags": ["inlinestats", "bisect"]
         },
         {
           "operation": "two_chained_inlinestats_esql",
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 20,
-          "tags": ["inlinestats"]
+          "tags": ["inlinestats", "bisect"]
         },
         {
           "operation": "three_chained_inlinestats_esql",
           "clients": 1,
           "warmup-iterations": 5,
           "iterations": 20,
-          "tags": ["inlinestats"]
+          "tags": ["inlinestats", "bisect"]
         },
       {%- endif -%}{# non-serverless-inlinestats-marker-end #}
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
@@ -981,21 +982,22 @@
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50,
-          "tags": ["inlinestats"]
+          "tags": ["inlinestats", "bisect"]
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "avg_passenger_count_filtered_aggregation",
           "clients": 1,
           "warmup-iterations": 10,
-          "iterations": 50
+          "iterations": 50,
+          "tags": ["bisect"]
         },
         {
           "operation": "avg_passenger_count_filtered_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50,
-          "tags": ["inlinestats"]
+          "tags": ["inlinestats", "bisect"]
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
@@ -1003,7 +1005,7 @@
           "clients": 1,
           "warmup-iterations": 10,
           "iterations": 50,
-          "tags": ["inlinestats"]
+          "tags": ["inlinestats", "bisect"]
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
@@ -1465,7 +1467,7 @@
           "clients": 1,
           "warmup-iterations": 500,
           "iterations": 500,
-          "tags": ["inlinestats","investigate"]
+          "tags": ["inlinestats", "investigate", "bisect"]
         },
         {
           "operation": "stats_then_inlinestats_count_esql",
