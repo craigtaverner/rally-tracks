@@ -1010,7 +1010,8 @@
           "operation": "avg_tip_percent_aggregation",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 10
+          "iterations": 10,
+          "tags": ["bisect"]
         },
         {
           "operation": "avg_tip_percent_esql_segment_partitioning",
@@ -1023,7 +1024,8 @@
           "operation": "avg_tip_percent_esql_doc_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20
+          "iterations": 20,
+          "tags": ["bisect"]
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
@@ -1465,7 +1467,7 @@
           "clients": 1,
           "warmup-iterations": 500,
           "iterations": 500,
-          "tags": ["inlinestats","investigate"]
+          "tags": ["inlinestats", "investigate", "bisect"]
         },
         {
           "operation": "stats_then_inlinestats_count_esql",
