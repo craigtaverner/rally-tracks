@@ -1010,31 +1010,27 @@
           "operation": "avg_tip_percent_aggregation",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 10,
-          "tags": ["bisect"]
+          "iterations": 10
         },
         {
           "operation": "avg_tip_percent_esql_segment_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {# non-serverless-doc-partitioning-marker-start #}{%- if build_flavor != "serverless" -%}
         {
           "operation": "avg_tip_percent_esql_doc_partitioning",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
       {%- endif -%}{# non-serverless-doc-partitioning-marker-end #}
         {
           "operation": "avg_amount_group_by_integer_aggregation",
           "clients": 1,
           "warmup-iterations": 5,
-          "iterations": 20,
-          "tags": ["bisect"]
+          "iterations": 20
         },
         {
           "operation": "avg_amount_group_by_integer_esql_segment_partitioning",
@@ -1469,7 +1465,7 @@
           "clients": 1,
           "warmup-iterations": 500,
           "iterations": 500,
-          "tags": ["inlinestats", "investigate", "bisect"]
+          "tags": ["inlinestats","investigate"]
         },
         {
           "operation": "stats_then_inlinestats_count_esql",
