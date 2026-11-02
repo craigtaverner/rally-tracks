@@ -1,0 +1,42 @@
+    {
+      "name": "geometry-transforms",
+      "description": "Runs the ST_SIMPLIFY, ST_SIMPLIFYPRESERVETOPOLOGY and ST_BUFFER ES|QL queries, with ST_ENVELOPE as a control, against already ingested indices.",
+      "default": false,
+      "schedule": [
+        {
+          "operation": "st-simplify-esql",
+          "warmup-iterations": 100,
+          "iterations": 50
+        },
+        {
+          "operation": "st-simplifypreservetopology-esql",
+          "warmup-iterations": 100,
+          "iterations": 50
+        },
+        {
+          "operation": "st-buffer-esql",
+          "warmup-iterations": 100,
+          "iterations": 50
+        },
+        {
+          "operation": "st-envelope-count-esql",
+          "warmup-iterations": 1,
+          "iterations": 2
+        },
+        {
+          "operation": "st-simplify-count-esql",
+          "warmup-iterations": 1,
+          "iterations": 2
+        },
+        {
+          "operation": "st-simplifypreservetopology-count-esql",
+          "warmup-iterations": 1,
+          "iterations": 2
+        },
+        {
+          "operation": "st-buffer-count-esql",
+          "warmup-iterations": 1,
+          "iterations": 2
+        }
+      ]
+    }
